@@ -1,0 +1,35 @@
+{
+    "namespace": "ibm.gse.eda.kc.vessel.domain",
+    "name": "VesselCourseEvent",
+    "type": "record",
+    "fields" : [
+        {
+            "name" : "vessel_id",
+            "type" : "string"
+        },
+        {
+            "name" : "status",
+            "type" : "string"
+        },
+        {
+            "name" : "speed",
+            "type" : "int"
+        },
+        {
+            "name" : "bearing",
+            "type" : "int"
+        },
+        {
+            "name" : "longitude",
+            "type" : "string"
+        },
+        {
+            "name" : "lattitude",
+            "type" : "string"
+        },
+        {
+            "name" : "timestamp",
+            "type" : "int"
+        }
+    ]
+}
