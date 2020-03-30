@@ -1,0 +1,1155 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Event driven Architecture Vessel course simulator</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#microprofile-32-openliberty-vessel-simulator" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="." title="Event driven Architecture Vessel course simulator" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Event driven Architecture Vessel course simulator
+            </span>
+            <span class="md-header-nav__topic">
+              Introduction
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/refarch-kc-vessel-simulator/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="." title="Event driven Architecture Vessel course simulator" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Event driven Architecture Vessel course simulator
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/refarch-kc-vessel-simulator/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introduction
+      </label>
+    
+    <a href="." title="Introduction" class="md-nav__link md-nav__link--active">
+      Introduction
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn" title="What you will learn" class="md-nav__link">
+    What you will learn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories" title="User stories" class="md-nav__link">
+    User stories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" title="Run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-fleet-service-on-your-laptop" title="Run the fleet service on your laptop" class="md-nav__link">
+    Run the fleet service on your laptop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-demo-locally-connected-to-event-streams-on-ibm-cloud" title="Run the demo locally connected to Event Streams on IBM Cloud" class="md-nav__link">
+    Run the demo locally connected to Event Streams on IBM Cloud
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-model" title="The model" class="md-nav__link">
+    The model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" title="Code" class="md-nav__link">
+    Code
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_1" title="User stories" class="md-nav__link">
+    User stories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-organization" title="Code organization" class="md-nav__link">
+    Code organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-driven-development" title="Test Driven Development" class="md-nav__link">
+    Test Driven Development
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-simple" title="Start simple" class="md-nav__link">
+    Start simple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vessel-simulator" title="vessel Simulator" class="md-nav__link">
+    vessel Simulator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis-definition" title="APIs definition" class="md-nav__link">
+    APIs definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-integration-tests-with-kafka" title="Running integration tests with Kafka" class="md-nav__link">
+    Running integration tests with Kafka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" title="Deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-locally" title="Run Locally" class="md-nav__link">
+    Run Locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-on-ibm-cloud-with-kubernetes-service" title="Run on IBM Cloud with Kubernetes Service" class="md-nav__link">
+    Run on IBM Cloud with Kubernetes Service
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potential-issue" title="Potential issue" class="md-nav__link">
+    Potential issue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="compendium/" title="Compendium" class="md-nav__link">
+      Compendium
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn" title="What you will learn" class="md-nav__link">
+    What you will learn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories" title="User stories" class="md-nav__link">
+    User stories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" title="Run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-fleet-service-on-your-laptop" title="Run the fleet service on your laptop" class="md-nav__link">
+    Run the fleet service on your laptop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-demo-locally-connected-to-event-streams-on-ibm-cloud" title="Run the demo locally connected to Event Streams on IBM Cloud" class="md-nav__link">
+    Run the demo locally connected to Event Streams on IBM Cloud
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-model" title="The model" class="md-nav__link">
+    The model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" title="Code" class="md-nav__link">
+    Code
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_1" title="User stories" class="md-nav__link">
+    User stories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-organization" title="Code organization" class="md-nav__link">
+    Code organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-driven-development" title="Test Driven Development" class="md-nav__link">
+    Test Driven Development
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-simple" title="Start simple" class="md-nav__link">
+    Start simple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vessel-simulator" title="vessel Simulator" class="md-nav__link">
+    vessel Simulator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis-definition" title="APIs definition" class="md-nav__link">
+    APIs definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-integration-tests-with-kafka" title="Running integration tests with Kafka" class="md-nav__link">
+    Running integration tests with Kafka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" title="Deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-locally" title="Run Locally" class="md-nav__link">
+    Run Locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-on-ibm-cloud-with-kubernetes-service" title="Run on IBM Cloud with Kubernetes Service" class="md-nav__link">
+    Run on IBM Cloud with Kubernetes Service
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potential-issue" title="Potential issue" class="md-nav__link">
+    Potential issue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/refarch-kc-vessel-simulator/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="microprofile-32-openliberty-vessel-simulator">Microprofile 3.2 openliberty vessel simulator</h1>
+<p>This microservice is responsible to simulate the vessel course events for a given voyage. It supports the event, actors, and commands discovered during the event storming workshop and illustrated by the following figure for the "vessel actor":</p>
+<p><img alt="" src="https://github.com/ibm-cloud-architecture/refarch-kc/blob/master/analysis/vessel-dom-cmd3.png" /></p>
+<p>The service exposes simple REST API to support getting vessels and fleets, and start and stop simulator to emulate vessel movements and container metrics events generation. When a vessel leaves or enters it will also generates the events as listed in the analysis.</p>
+<h2 id="what-you-will-learn">What you will learn</h2>
+<ul>
+<li>Using JAXRS API to define REST resources</li>
+<li>Using microprofile 3.2 for API documentation, metrics, heath and readiness</li>
+<li>How to leverage OpenLiberty in container to support simple JEE and microprofile services</li>
+<li>Kafka producer code example</li>
+<li>Test Driven Development with JAXRS and Integration test with Kafka</li>
+</ul>
+<p>We recommend also reading the <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/kafka/producers.md">producer design and coding considerations article</a></p>
+<h2 id="pre-requisites">Pre-Requisites</h2>
+<ul>
+<li><a href="https://maven.apache.org/install.html">Maven</a> used to compile and package the application.</li>
+<li>Java 8: Any compliant JVM should work.</li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java 8 JDK from Oracle</a></li>
+<li><a href="http://www.ibm.com/developerworks/java/jdk/">Java 8 JDK from IBM (AIX, Linux, z/OS, IBM i)</a>,
+    or <a href="https://developer.ibm.com/assets/wasdev/#filter/assetTypeFilters=PRODUCT">Download a Liberty server package</a>
+    that contains the IBM JDK (Windows, Linux)</li>
+<li>Have docker engine installed on your computer.</li>
+</ul>
+<h2 id="user-stories">User stories</h2>
+<p>This service keeps track of each of the vesselts available for transporting containers. Each vessel has a unique vesselID. We limit the implementation scope to a minimum viable product to demonstrate the vessel mouvement and generate events to kafka so we can apply stateful operator to compute average speed, ETA, and max speed metrics. The following user stories are implemented:</p>
+<ul>
+<li>[ ] The information about each vessel is kept in a json file so we an modify those data if necessary. Vessels are uniquely identified by their name (as vesselID).</li>
+<li>[ ] The capacity of a vessel is represented by a matrix, number of rows x number of columns to make it simpler. Therefore the total number of container is rows*columns.</li>
+<li>[ ] Support GPS lat/log position reports, as vessel position event, of the position of the vessel a different point in time. This is modeled as csv file with one row of (lat,log) pair, a row representing a time stamp. ()</li>
+<li>[ ] Generate vessel event when leaving source port and when entering destination port, and when docked.</li>
+<li>[ ] Define query of what happen to a vessel from a given time to retrace its past voyages.</li>
+</ul>
+<p>For more in depth analysis and concepts explained <a href="https://github.com/ibm-cloud-architecture/refarch-kc#fleetsvessels-microservice---concept">see this note</a></p>
+<h2 id="run">Run</h2>
+<h3 id="run-the-fleet-service-on-your-laptop">Run the fleet service on your laptop</h3>
+<p>If you are in a hurry and want to see the simulator running quickly on your local machine, you can do start our docker compose for a unique kafka node cluster, start liberty server with the simulator app deployed and use one of the scenario to trigger a simulation. This can be summarized as the following steps
+<div class="codehilite"><pre><span></span># Go to the parent repository refarch-kc/docker folder
+$ cd ../refarch-kc/docker
+
+# If not done previously, start kafka and zookeeper locally. See this section for detail: https://github.com/ibm-cloud-architecture/refarch-kc#run-locally.
+$ docker-compose -f backbone-compose.yml up
+
+# Go back to this project to build it
+$ ./script/buildDocker.sh
+
+# Start the liberty server. Note that this script defines environment variables to access kafka brokers
+$ ./scripts/runDocker.sh
+
+# Workaround for NullPointerException when starting Docker :
+# run liberty locally (see command above) once.
+
+# Verify the service is up and running by looking at the fleet API in your web browser http://localhost:9081/api/explorer/ and even execute the GET /fleetms/fleets to get the 3 fleets defined.
+
+# Start the kafka consumer to get container metrics so you can see the solution generating events.
+$ ./scripts/runContainerMetricConsumer.sh
+
+# Start the &quot;Fire in containers&quot; simulation
+$ cd scripts
+$ ./startContainerFireSimulation.sh
+# .... the simulation can run for a minute if you want to stop use the following command
+$ ./stopContainerSimulation.sh
+
+# Another simulation: Start the Container power off simulation
+$ ./startContainerPowerOffSimulation.sh
+</pre></div></p>
+<p>If you want to get a clear understanding of the traces see <a href="./docs/SimulatorTracing.md">this note</a></p>
+<h3 id="run-the-demo-locally-connected-to-event-streams-on-ibm-cloud">Run the demo locally connected to Event Streams on IBM Cloud</h3>
+<p>As an alternate you can use our Event Stream backbone we have configured on IBM Cloud and still run the fleet service on you laptop.</p>
+<p>If you want to run with our Event Streams backbone deployed on IBM Cloud, ask us for the api key and then do the following:
+<div class="codehilite"><pre><span></span>export KAFKA_BROKERS=&quot;kafka03-prod02.messagehub.services.us-south.bluemix.net:9093,kafka01-prod02.messagehub.services.us-south.bluemix.net:9093,kafka02-prod02.messagehub.services.us-south.bluemix.net:9093,kafka04-prod02.messagehub.services.us-south.bluemix.net:9093,kafka05-prod02.messagehub.services.us-south.bluemix.net:9093&quot;
+export KAFKA_APIKEY=&quot;&lt;the super secret key we will give you&gt;&quot;
+mvn liberty:run-server
+</pre></div></p>
+<h2 id="the-model">The model</h2>
+<p>A fleet will have one to many vessels. Fleet has id and name. vessel has ID, name, status, position, port and type. vessel carries containers. Container has id, and metrics like amp, temperature. Here is an example of JSON document illustrating this model:
+<div class="codehilite"><pre><span></span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;f1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;KC-NorthAtlantic&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;vessels&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MarieRose&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;latitude&quot;</span><span class="p">:</span> <span class="s2">&quot;37.8044&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;longitude&quot;</span><span class="p">:</span> <span class="s2">&quot;-122.2711&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Docked&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;Oakland&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;maxRow&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;maxColumn&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+         <span class="nt">&quot;numberOfContainers&quot;</span> <span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+         <span class="nt">&quot;containers&quot;</span><span class="p">:</span> <span class="p">[</span>
+             <span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;c_2&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Reefer&quot;</span><span class="p">,</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;amp&quot;</span><span class="p">:</span><span class="mi">46</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;RUN&quot;</span><span class="p">,</span><span class="nt">&quot;row&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;column&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;vesselId&quot;</span><span class="p">:</span><span class="s2">&quot;MarieRose&quot;</span><span class="p">}</span>
+         <span class="p">],</span>
+      <span class="p">}],</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="code">Code</h2>
+<p>The base of the project was created using IBM Microclimate using microprofile / Java EE template deployable in WebSphere Liberty. Once, the project template was generated, we applied a Test Driven Development approach to develop the application logic. But first let define some use stories we want to support in this simulator.</p>
+<h3 id="user-stories_1">User stories</h3>
+<p>We are listing here the basic features to support:</p>
+<ul>
+<li>[x] Support simulate vessel movement and refrigerated containers metrics simulation via  REST api to be easily consumable from backend for frontend component using a POST verb.</li>
+<li>[x] Support simulation of container fire, container down and heat wave so container metric events can be analyzed down stream.</li>
+<li>[x] Integrate with IBM Event Streams running on IBM public cloud  using api_key</li>
+<li>[x] Integrate with Kafka running locally.</li>
+<li>[ ] Generate vessel position event x seconds, to demonstrate vessel movement representing x minutes of real time. Like in a video game.</li>
+<li>[x] Generate, at each position update, the n container metric events for all container carried in the moving vessel</li>
+</ul>
+<h3 id="code-organization">Code organization</h3>
+<p>The following package structure is used:</p>
+<ul>
+<li><code>ibm.labs.kc.model</code> for the domain specific model.</li>
+<li><code>ibm.labs.kc.app.kafka</code> kafka consumer and producer and config management.</li>
+<li><code>ibm.labs.kc.app.rest</code> set of REST resources with API definitions</li>
+<li><code>ibm.labs.kc.dao</code> data access object for vessel and fleet. Use mockup no backend DB yet.</li>
+<li><code>ibm.labs.kc.event.model</code> event definitions for the kafka topic payload</li>
+<li><code>ibm.labs.kc.simulator</code> simulators for the demo as we do not have real vessels... yet.</li>
+</ul>
+<p>The most important properties are defined in the config.properties file under <code>src/main/resources</code>.</p>
+<h3 id="test-driven-development">Test Driven Development</h3>
+<p>Test driven development should be used to develop microservice as it helps to develop by contract and think about how each function should work from a client point of view. <a href="https://cloudcontent.mybluemix.net/cloud/garage/content/code/practice_test_driven_development">This article</a> introduces the practice.
+To apply TDD we want to describe our approach for this project, by starting by the tests.</p>
+<h4 id="start-simple">Start simple</h4>
+<p>As an example of TDD applied to this project, we want to test the "get the list of fleets" feature. As this code is built by iteration, the first iteration is to get the fleet definition and vessels definition from files. The <code>src/main/resources</code> folder includes a json file to define the fleets. We do not need an external datasource for this mockup solution.</p>
+<p>The json is an array of fleet definitions, something like:
+<div class="codehilite"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;f1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;KC-NorthAtlantic&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;vessels&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div></p>
+<p>So starting from the test, we implemented in <code>src/test/java</code> the <code>TestReadingFleet</code> class to test a FleetService. The service will provide the business interface and it will use a data access object to go to the datasource.</p>
+<p>The first test may look like the basic code below:</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGetAllFleets</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">FleetDAO</span> <span class="n">dao</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FleetDAOMockup</span><span class="o">(</span><span class="s">&quot;Fleet.json&quot;</span><span class="o">);</span>
+    <span class="n">FleetService</span> <span class="n">serv</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FleetService</span><span class="o">(</span><span class="n">dao</span><span class="o">);</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Fleet</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">serv</span><span class="o">.</span><span class="na">getFleets</span><span class="o">();</span>
+    <span class="n">Assert</span><span class="o">.</span><span class="na">assertNotNull</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
+    <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>After generating class placeholder and java interface, executing the test fails, and we need to implement the DAO and the service operation <code>getFleets()</code>. In the FleetService we simply delegate to the DAO.</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Fleet</span><span class="o">&gt;</span> <span class="nf">getFleets</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fleet</span><span class="o">&gt;(</span><span class="n">dao</span><span class="o">.</span><span class="na">getFleets</span><span class="o">());</span>
+    <span class="o">}</span>
+</pre></div>
+
+<p>In the future, we may want to filter out the vessels or separate fleet from vessel in different json files so some logic may be added in this <code>getFleets()</code> function. The DAO is defined via an interface, and we add a Factory to build DAO implementation depending on the configuration. The DAO implementation at first is loadding data from file.</p>
+<p>To execute all the tests outside of the Eclipse IDE, we use the maven: <code>mvn test</code>.</p>
+<p>Quickly we can see that the DAO may be more complex than expected so we add unit tests for the DAO too. After 10, 15 minutes we have a service component and a DAO with Factory and Mockup implementation created and tested.</p>
+<p>The Fleet service needs to be exposed as REST api, so we add the JAXRS annotations inside the service class to the method we want to expose.</p>
+<div class="codehilite"><pre><span></span><span class="nd">@Path</span><span class="o">(</span><span class="s">&quot;fleets&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FleetService</span> <span class="o">{</span>
+
+    <span class="nd">@GET</span>
+    <span class="nd">@Produces</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Fleet</span><span class="o">&gt;</span> <span class="nf">getFleets</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>So now if we want to test at the API level, we need to do integration tests. This is where <strong>IBM Microclimate</strong> is coming handy as it created a nice example with <code>HealthEndpointIT</code> test class to get us started. All integration tests are defined in the <code>it</code> java package so we can control the maven life cycle and execute the integration tests when the environment is ready. The <code>pom.xml</code> defines configuration using the <code>maven Failsafe Plugin</code> which is designed to run integration tests. This Maven plugin has four phases for running integration tests:</p>
+<ul>
+<li><strong>pre-integration-test</strong> for setting up the integration test environment.</li>
+<li><strong>integration-test</strong> for running the integration tests.</li>
+<li><strong>post-integration-test</strong> for tearing down the integration test environment.</li>
+<li><strong>verify</strong> for checking the results of the integration tests.</li>
+</ul>
+<p>The pre-integration-test phase loads IBM Liberty server via another maven plugin: <a href="https://github.com/WASdev/ci.maven/blob/master/docs/parent-pom.md">liberty-maven-app-parent</a> so that the API can be tested from the app server.</p>
+<p>To execute the integration tests do a <code>mvn verify</code>.</p>
+<p>By using the same code approach as <code>HealthEndpointIT</code> we created a <code>TestFleetAPIsIT</code> Junit test class.</p>
+<p>The environment properties are set in the <code>pom.xml</code> file.</p>
+<div class="codehilite"><pre><span></span>    <span class="kd">protected</span> <span class="n">String</span> <span class="n">port</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&quot;liberty.test.port&quot;</span><span class="o">);</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="n">warContext</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&quot;war.context&quot;</span><span class="o">);</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="n">baseUrl</span> <span class="o">=</span> <span class="s">&quot;http://localhost:&quot;</span> <span class="o">+</span> <span class="n">port</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">warContext</span><span class="o">;</span>
+    <span class="c1">// .... then get a HTTP client and perform a HTTP GET</span>
+    <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">ClientBuilder</span><span class="o">.</span><span class="na">newClient</span><span class="o">();</span>
+    <span class="n">Invocation</span><span class="o">.</span><span class="na">Builder</span> <span class="n">invoBuild</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">target</span><span class="o">(</span><span class="n">url</span><span class="o">).</span><span class="na">request</span><span class="o">();</span>
+    <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">invoBuild</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+    <span class="n">String</span> <span class="n">fleetsAsString</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="na">readEntity</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="c1">//..</span>
+</pre></div>
+
+<p>If you need to debug this test inside Eclipse, you need to start the liberty server as an external process by using <code>mvn liberty:run-server</code>.</p>
+<p>The second logic we want to TDD is the simulation.</p>
+<h4 id="vessel-simulator">vessel Simulator</h4>
+<p>The simulation of the different container events is done in the class <code>BadEventSimulator</code>. But this class is used in a Runner, the <code>vesselRunner</code>. The approach is to move the vessel to the next position as defined in the separate csv file (named by the vessel's name), then to send the new vessel position, and the container metrics at that position as events. So the simulator uses two Kafka producers, one for the vessel position and one for the container metrics.
+The topic names are defined in the <code>src/main/resource/config.properties</code> as well as the Kafka parameters. If you did not configure your kafka server, we have a script to create those topics <a href="https://github.com/ibm-cloud-architecture/refarch-kc/tree/master/scripts/createLocalTopics.sh">here</a></p>
+<p>From a test point of view we want to create a simulation controller instance, call the service simulation operation and verify the impacted container:</p>
+<p><div class="codehilite"><pre><span></span><span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">validateContainerDown</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">serv</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">vesselService</span><span class="o">();</span>
+        <span class="n">vesselSimulationControl</span> <span class="n">ctl</span> <span class="o">=</span> <span class="k">new</span> <span class="n">vesselSimulationControl</span><span class="o">(</span><span class="s">&quot;JimminyCricket&quot;</span><span class="o">,</span> <span class="n">vesselSimulationControl</span><span class="o">.</span><span class="na">REEFER_DOWN</span><span class="o">);</span>
+        <span class="n">ctl</span><span class="o">.</span><span class="na">setNumberOfMinutes</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">Response</span> <span class="n">res</span> <span class="o">=</span> <span class="n">serv</span><span class="o">.</span><span class="na">performSimulation</span><span class="o">(</span><span class="n">ctl</span><span class="o">);</span>
+        <span class="n">vessel</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">vessel</span><span class="o">)</span><span class="n">res</span><span class="o">.</span><span class="na">getEntity</span><span class="o">();</span>
+        <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">getContainers</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="mi">3</span><span class="o">).</span><span class="na">getStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">Container</span><span class="o">.</span><span class="na">STATUS_DOWN</span><span class="o">));</span>
+    <span class="o">}</span>
+</pre></div>
+Event after adding the vesselSimulationControl Java Bean and the operation performSimulation into the service... we have a problem... How to unit tests without sending message to Kafka?.</p>
+<p>The vesselRunner is a Runnable class and uses the <code>positionPublisher</code> and <code>containerPublisher</code> which are standard Kafka producers.
+Here is a code snippet for the <code>run()</code> method of the <code>vesselRunner</code>: The vessel positions are loaded from a file in the class loader and then for each container in the boat, send metrics.</p>
+<div class="codehilite"><pre><span></span><span class="k">try</span>  <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">Position</span> <span class="n">p</span> <span class="o">:</span> <span class="k">this</span><span class="o">.</span><span class="na">positions</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// vessels publish their position to a queue</span>
+        <span class="n">vesselPosition</span> <span class="n">sp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">vesselPosition</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">vesselName</span><span class="o">,</span><span class="n">p</span><span class="o">.</span><span class="na">getLatitude</span><span class="o">(),</span><span class="n">p</span><span class="o">.</span><span class="na">getLongitude</span><span class="o">());</span>
+        <span class="n">positionPublisher</span><span class="o">.</span><span class="na">publishvesselPosition</span><span class="o">(</span><span class="n">sp</span><span class="o">);</span>
+
+        <span class="c1">// Then publish the state of their containers</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Container</span><span class="o">&gt;</span> <span class="n">row</span> <span class="o">:</span>  <span class="n">vessel</span><span class="o">.</span><span class="na">getContainers</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Container</span> <span class="n">c</span> <span class="o">:</span> <span class="n">row</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ContainerMetric</span> <span class="n">cm</span> <span class="o">=</span> <span class="n">BadEventSimulator</span><span class="o">.</span><span class="na">buildContainerMetric</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">vesselName</span><span class="o">,</span><span class="n">c</span><span class="o">,</span><span class="n">dateFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">currentWorldTime</span><span class="o">));</span>
+                <span class="n">containerPublisher</span><span class="o">.</span><span class="na">publishContainerMetric</span><span class="o">(</span><span class="n">cm</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">currentWorldTime</span><span class="o">=</span><span class="n">modifyTime</span><span class="o">(</span><span class="n">currentWorldTime</span><span class="o">);</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">round</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">numberOfMinutes</span><span class="o">*</span><span class="mi">60000</span><span class="o">/</span><span class="k">this</span><span class="o">.</span><span class="na">positions</span><span class="o">.</span><span class="na">size</span><span class="o">()));</span>
+    <span class="o">}</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</pre></div>
+
+<p>So to avoid using kafka for unit tests, we can use mockito to mockup the producers. We encourage to read this <a href="https://javacodehouse.com/blog/mockito-tutorial/">Mockito tutorial</a> and <a href="http://www.vogella.com/tutorials/Mockito/article.html#testing-with-mock-objects">this one.</a> to have some basic knowledge on how to use mockito. We added the following dependency in the <code>pom.xml</code>.</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.mockito<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>mockito-core<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.23.4<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+<p>Add a constructor in <code>vesselRunner</code> so we can inject the producer. The test can use mockup at the simulator level or at the producer level. Here is an example in the unit test class of injecting for producer:
+<div class="codehilite"><pre><span></span> <span class="nd">@Mock</span>
+ <span class="kd">static</span> <span class="n">PositionPublisher</span> <span class="n">positionPublisherMock</span><span class="o">;</span>
+ <span class="nd">@Mock</span>
+ <span class="kd">static</span> <span class="n">ContainerPublisher</span> <span class="n">containerPublisherMock</span><span class="o">;</span>
+
+ <span class="nd">@Rule</span> <span class="kd">public</span> <span class="n">MockitoRule</span> <span class="n">mockitoRule</span> <span class="o">=</span> <span class="n">MockitoJUnit</span><span class="o">.</span><span class="na">rule</span><span class="o">();</span>
+
+
+ <span class="nd">@Test</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">validateContainerFire</span><span class="o">()</span> <span class="o">{</span>
+     <span class="c1">// use dependency injection via constructor.</span>
+    <span class="n">vesselRunner</span> <span class="n">sr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">vesselRunner</span><span class="o">(</span><span class="n">positionPublisherMock</span><span class="o">,</span> <span class="n">containerPublisherMock</span><span class="o">);</span>
+    <span class="n">vesselSimulator</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">vesselSimulator</span><span class="o">(</span><span class="n">sr</span><span class="o">);</span>
+    <span class="n">serv</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">vesselService</span><span class="o">(</span><span class="n">DAOFactory</span><span class="o">.</span><span class="na">buildOrGetvesselDAOInstance</span><span class="o">(</span><span class="s">&quot;Fleet.json&quot;</span><span class="o">),</span><span class="n">s</span><span class="o">);</span>
+    <span class="c1">// ..</span>
+    <span class="n">Response</span> <span class="n">res</span> <span class="o">=</span> <span class="n">serv</span><span class="o">.</span><span class="na">performSimulation</span><span class="o">(</span><span class="n">ctl</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+Now the tests succeed and do not send any message to Kafka.</p>
+<h3 id="apis-definition">APIs definition</h3>
+<p>We can define the API using yaml file and generates code from there, but we are using a TDD approach we start by the code: so we need to add API annotations to get the Swagger generated for us. The MicroProfile OpenAPI specification provides a set of Java interfaces and programming models that allow Java developers to natively produce OpenAPI v3 documents from their JAX-RS applications. We added annotations to the resource classes to support API documentation. Here is an example of microprofile openapi annotations.</p>
+<div class="codehilite"><pre><span></span><span class="nd">@Operation</span><span class="o">(</span><span class="n">summary</span> <span class="o">=</span> <span class="s">&quot;Get fleet by fleet name&quot;</span><span class="o">,</span><span class="n">description</span><span class="o">=</span><span class="s">&quot; Retrieve a fleet with vessels from is unique name&quot;</span><span class="o">)</span>
+<span class="nd">@APIResponses</span><span class="o">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="nd">@APIResponse</span><span class="o">(</span>
+            <span class="n">responseCode</span> <span class="o">=</span> <span class="s">&quot;404&quot;</span><span class="o">,</span>
+            <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;fleet not found&quot;</span><span class="o">,</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="nd">@Content</span><span class="o">(</span><span class="n">mediaType</span> <span class="o">=</span> <span class="s">&quot;text/plain&quot;</span><span class="o">)),</span>
+        <span class="nd">@APIResponse</span><span class="o">(</span>
+            <span class="n">responseCode</span> <span class="o">=</span> <span class="s">&quot;200&quot;</span><span class="o">,</span>
+            <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;fleet retrieved&quot;</span><span class="o">,</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="nd">@Content</span><span class="o">(</span><span class="n">mediaType</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span><span class="o">,</span>
+            <span class="n">schema</span> <span class="o">=</span> <span class="nd">@Schema</span><span class="o">(</span><span class="n">implementation</span> <span class="o">=</span> <span class="n">Fleet</span><span class="o">.</span><span class="na">class</span><span class="o">)))</span> <span class="o">})</span>
+    <span class="kd">public</span> <span class="n">Fleet</span> <span class="nf">getFleetByName</span><span class="o">(</span>
+            <span class="nd">@Parameter</span><span class="o">(</span>
+                    <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;The fleetname to get vessels data&quot;</span><span class="o">,</span>
+                    <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
+                    <span class="n">example</span> <span class="o">=</span> <span class="s">&quot;KC-NorthFleet&quot;</span><span class="o">,</span>
+                    <span class="n">schema</span> <span class="o">=</span> <span class="nd">@Schema</span><span class="o">(</span><span class="n">type</span> <span class="o">=</span> <span class="n">SchemaType</span><span class="o">.</span><span class="na">STRING</span><span class="o">))</span>
+            <span class="nd">@PathParam</span><span class="o">(</span><span class="s">&quot;fleetName&quot;</span><span class="o">)</span> <span class="n">String</span> <span class="n">fleetName</span><span class="o">)</span> <span class="o">{</span>
+            <span class="o">}</span>
+</pre></div>
+
+<p>In the Liberty configuration file: <code>src/main/liberty/server.xml</code> we added the following features:
+<div class="codehilite"><pre><span></span><span class="nt">&lt;feature&gt;</span>jaxrs-2.0<span class="nt">&lt;/feature&gt;</span>
+<span class="nt">&lt;feature&gt;</span>openapi-3.0<span class="nt">&lt;/feature&gt;</span>
+<span class="nt">&lt;feature&gt;</span>restConnector-2.0<span class="nt">&lt;/feature&gt;</span>
+</pre></div>
+Once the server is restarted, we first go to http://localhost:9080/api/explorer to access the API definitions and even we are able to test it:</p>
+<p><img alt="" src="docs/fleets-api.png" /></p>
+<p>A summary of the operations defined for this simulator are:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET '/fleetms/fleets/'</td>
+<td>Get the list of fleet</td>
+</tr>
+<tr>
+<td>GET '/fleetms/fleets/:fleetname'</td>
+<td>Get the vessels of a given fleet</td>
+</tr>
+<tr>
+<td>POST '/fleetms/fleets/simulate'</td>
+<td>Start to simulate vessels movements</td>
+</tr>
+<tr>
+<td>POST '/fleetms/vessels/simulate'</td>
+<td>Start to simulate vessel movements and container metrics generation</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="docs/fleetms-apis.png" /></p>
+<h2 id="running-integration-tests-with-kafka">Running integration tests with Kafka</h2>
+<p>By adding simulation tests we need to have kafka running now. We have deployed Kafka and Zookeeper to Kubernetes on Docker Edge for Mac and are able to connect to <code>docker-for-desktop</code> cluster. We have described this type of deployment <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/deployments/kafka/README.md">in this note for Kafka</a> and <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/deployments/zookeeper/README.md">this note for zookeeper</a></p>
+<p>As an alternate you can use the docker image from <a href="https://docs.confluent.io/current/installation/docker/docs/installation/single-node-client.html#single-node-basic">confluent.io</a> and docker-compose to start zookeeper and kafka single broker.</p>
+<p>We use environment variables to control the configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Role</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KAFKA_BROKERS</td>
+<td>IP addresses and port number of the n brokers configured in your environment</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The pom.xml uses those variables to use the local kafka for the integration tests:</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;configuration&gt;</span>
+        <span class="nt">&lt;environmentVariables&gt;</span>
+            <span class="nt">&lt;KAFKA_BROKERS&gt;</span>gc-kafka-0.gc-kafka-hl-svc.greencompute.svc.cluster.local:32224<span class="nt">&lt;/KAFKA_BROKERS&gt;</span>
+        <span class="nt">&lt;/environmentVariables&gt;</span>
+</pre></div>
+
+<p>One interesting integration test is defined in the class <code>it.FireContainerSimulationIT.java</code> as it starts a Thread running a ContainerConsumer (bullet 1 in figure below) which uses Kafka api to get <code>Container events</code> (class <code>ibm.labs.kc.event.model.ContainerMetric</code>) from the <code>bluewaterContainer</code> topic, and then calls the POST HTTP end point (2): <code>http://localhost:9080/fleetms/vessels/simulate</code> with a simulator control object (<code>ibm.labs.kc.dto.model.vesselSimulationControl</code>). The application is producing vessel position events and container metrics events at each time slot (3). The consumer is getting multiple events (4) from the topic showing some containers are burning:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;c_2&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Reefer&quot;</span><span class="p">,</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;amp&quot;</span><span class="p">:</span><span class="mi">46</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;FIRE&quot;</span><span class="p">,</span><span class="nt">&quot;row&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;column&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;vesselId&quot;</span><span class="p">:</span><span class="s2">&quot;JimminyCricket&quot;</span><span class="p">}</span><span class="err">,</span>
+<span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;c_3&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Reefer&quot;</span><span class="p">,</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;amp&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;FIRE&quot;</span><span class="p">,</span><span class="nt">&quot;row&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;column&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;vesselId&quot;</span><span class="p">:</span><span class="s2">&quot;JimminyCricket&quot;</span><span class="p">}</span>
+</pre></div>
+
+<p><img alt="" src="docs/it-fire-containers.png" /></p>
+<p>The integration tests are executed with maven:
+<div class="codehilite"><pre><span></span>mvn verify
+</pre></div></p>
+<h2 id="deployment">Deployment</h2>
+<h3 id="configuration">Configuration</h3>
+<p>The application is configured to provide JAX-RS REST capabilities, JNDI, JSON parsing and Contexts and Dependency Injection (CDI).
+These capabilities are provided through dependencies in the <code>pom.xml</code> file and Liberty features enabled in the server config file found in <code>src/main/liberty/config/server.xml</code>.</p>
+<h3 id="run-locally">Run Locally</h3>
+<p>We described the process in the <a href="#run-the-fleet-service-on-your-laptop">section above</a></p>
+<h3 id="run-on-ibm-cloud-with-kubernetes-service">Run on IBM Cloud with Kubernetes Service</h3>
+<p>We are deploying the simulator on the kubernetes service. To define your own IBM Kubernetes Service (IKS) <a href="https://github.com/ibm-cloud-architecture/refarch-kc/blob/master/docs/prepare-ibm-cloud.md">see our explanations here.</a></p>
+<p>We use <a href="https://helm.sh/">Helm</a> to install the fleetms service. Helm is a package manager to deploy applications and services to Kubernetes cluster. Package definitions are charts, which are yaml files, to be shareable between teams.</p>
+<p>The first time you need to build a chart for any microservice, select a chart name (e.g. <code>fleetms</code>) and then use the command like:
+<div class="codehilite"><pre><span></span>$ mkdir chart <span class="o">&amp;&amp;</span> <span class="nb">cd</span> chart
+$ helm init fleetms
+</pre></div></p>
+<p>This creates yaml files and a simple set of folders. Those files play a role to define the deployment configuration for kubernetes. Under the templates folder the yaml files use parameters coming from the <code>values.yaml</code> and <code>chart.yaml</code> files.</p>
+<ul>
+<li><em>Chart.yaml</em>: This is a global parameter file. Set the version and name attributes, as they will be used in deployment.yaml. Each time you deploy a new version of your app you can just change the version number. The values in the chart.yaml are used in the templates.</li>
+</ul>
+<p>The following modifications were done to the deployment configuration file to leverage environment variables and docker registry and kafka api key secrets.
+<em> In <code>values.yml</code> file:
+ <div class="codehilite"><pre><span></span><span class="n">env</span><span class="o">:</span>
+ <span class="n">kafka</span><span class="o">:</span>
+   <span class="n">brokers</span><span class="o">:</span> <span class="n">kafka03</span><span class="o">....</span>
+<span class="n">image</span><span class="o">:</span>
+    <span class="n">repository</span><span class="o">:</span> <span class="n">ibmcase</span><span class="o">/</span><span class="n">kcontainer</span><span class="o">-</span><span class="n">fleet</span><span class="o">-</span><span class="n">ms</span>
+    <span class="n">tag</span><span class="o">:</span> <span class="n">latest</span>
+    <span class="n">pullPolicy</span><span class="o">:</span> <span class="n">Always</span>
+</pre></div>
+</em> In <code>deployment.yml</code> template file
+ <div class="codehilite"><pre><span></span><span class="x">  spec:</span>
+<span class="x">     imagePullSecrets:</span>
+<span class="x">         - name: </span><span class="cp">{{</span> <span class="nv">.Values.image.pullSecret</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">     containers: ...</span>
+<span class="x">   env:</span>
+<span class="x">       - name: KAFKA_BROKERS</span>
+<span class="x">           value: &quot;</span><span class="cp">{{</span> <span class="nv">.Values.env.kafka.brokers</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">       - name: KAFKA_APIKEY</span>
+<span class="x">           valueFrom:</span>
+<span class="x">             secretKeyRef:</span>
+<span class="x">               name: es-secret</span>
+<span class="x">               key: apikey</span>
+</pre></div></p>
+<p>The commands for the deploymnet are described below:</p>
+<div class="codehilite"><pre><span></span># be sure to be connected to your kubernetes cluster:
+$ ibmcloud login -a https://api.us-east.bluemix.net
+
+# Target the IBM Cloud Container Service region in which you want to work
+$ ibmcloud cs region-set us-east
+
+$ ibmcloud cs cluster-config &lt;cluster-name&gt;
+$ export KUBECONFIG=/Users/jeromeboyer/.bluemix/plugins/container-service/clusters/&lt;cluster-name&gt;/&lt;kube-config-&lt;cluster-name&gt;.yml&gt;
+
+# Verify you reach the cluster and get the nodes
+$ kubectl get nodes
+$ helm init
+$ helm version
+$ cd chart
+$ helm install fleetms/ --name kc-fleetms --namespace browncompute
+
+# if you have an issue and wants to uninstall do
+$ helm del --purge kc-fleetms
+
+# If you need to upgrade an existing deployed release use the command:
+$ helm upgrade kc-fleetms fleetms/ --namespace browncompute
+</pre></div>
+
+<p>To get the IP address and port number of the <code>kc-fleetms</code> API use the commands:</p>
+<div class="codehilite"><pre><span></span>$ kubectl get pods --namespace browncompute
+NAME                                  READY     STATUS    RESTARTS   AGE
+fleetms-deployment-85ccf47475-nj54q   <span class="m">1</span>/1       Running   <span class="m">0</span>          1h
+
+
+$ kubectl describe pod fleetms-deployment-85ccf47475-nj54q -n browncompute
+
+<span class="c1"># Get port number for the exposed nodeport</span>
+$ kubectl get service -n browncompute
+NAME              TYPE       CLUSTER-IP       EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>                         AGE
+fleetms-service   NodePort   <span class="m">172</span>.21.151.255   &lt;none&gt;        <span class="m">9080</span>:30951/TCP,9443:30931/TCP   1h
+
+<span class="c1"># Get public address of the worker nodes:</span>
+$ ibmcloud ks workers &lt;cluster_name&gt;
+</pre></div>
+
+<p>Test the deployed app is running using the URL: <code>http://&lt;public-IP-address&gt;:&lt;port&gt;/fleetms/fleets</code></p>
+<h4 id="potential-issue">Potential issue</h4>
+<p>Here is a <a href="https://github.com/ibm-cloud-architecture/refarch-integration/blob/master/docs/icp/troubleshooting.md">troubleshooting note</a> that can always be helpful to search solution for common problem.</p>
+<p>While deploying a liberty on ubuntu docker image to IKS, we got a vulnerability issue. This is reported in the image registry, in the image name. The resolution was "Upgrade apt to &gt;= 1.2.29ubuntu0.1", which means modifying the Dockerfile to get the last apt. (Adding the following <code>RUN apt-get update -q -y &amp;&amp; apt-get dist-upgrade -q -y</code> in the docker file).</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="compendium/" title="Compendium" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Compendium
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.b806dc00.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
