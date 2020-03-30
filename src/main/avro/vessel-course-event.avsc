@@ -1,5 +1,5 @@
 {
-    "namespace": "ibm.gse.eda.kc.vessel.domain",
+    "namespace": "ibm.gse.eda.kc.vessel.domain.events",
     "name": "VesselCourseEvent",
     "type": "record",
     "fields" : [

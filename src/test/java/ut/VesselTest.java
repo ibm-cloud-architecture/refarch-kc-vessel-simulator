@@ -19,6 +19,6 @@ public class VesselTest {
     public void shouldGetAVesselGivenItsID(){
         Vessel v = vesselRepository.getVessel("Jiminy Cricket");
         Assert.assertNotNull(v);
-        Assert.assertTrue(v.getSpeed() >= 25);
+        Assert.assertTrue(v.getSpeed() >= 18);
     }
 }

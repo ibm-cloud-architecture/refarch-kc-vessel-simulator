@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package ibm.gse.eda.kc.vessel.domain.events;
+package ibm.gse.eda.kc.vessel.domain;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2572558603042785464L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VesselCourseEvent\",\"namespace\":\"ibm.gse.eda.kc.vessel.domain.events\",\"fields\":[{\"name\":\"vessel_id\",\"type\":\"string\"},{\"name\":\"status\",\"type\":\"string\"},{\"name\":\"speed\",\"type\":\"int\"},{\"name\":\"bearing\",\"type\":\"int\"},{\"name\":\"longitude\",\"type\":\"string\"},{\"name\":\"lattitude\",\"type\":\"string\"},{\"name\":\"timestamp\",\"type\":\"int\"}]}");
+  private static final long serialVersionUID = -4615142144829578850L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VesselCourseEvent\",\"namespace\":\"ibm.gse.eda.kc.vessel.domain\",\"fields\":[{\"name\":\"vessel_id\",\"type\":\"string\"},{\"name\":\"status\",\"type\":\"string\"},{\"name\":\"speed\",\"type\":\"int\"},{\"name\":\"bearing\",\"type\":\"int\"},{\"name\":\"longitude\",\"type\":\"string\"},{\"name\":\"lattitude\",\"type\":\"string\"},{\"name\":\"timestamp\",\"type\":\"int\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -260,8 +260,8 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
    * Creates a new VesselCourseEvent RecordBuilder.
    * @return A new VesselCourseEvent RecordBuilder
    */
-  public static ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder newBuilder() {
-    return new ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder();
+  public static ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder newBuilder() {
+    return new ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder();
   }
 
   /**
@@ -269,11 +269,11 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing builder to copy.
    * @return A new VesselCourseEvent RecordBuilder
    */
-  public static ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder newBuilder(ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder other) {
+  public static ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder newBuilder(ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder other) {
     if (other == null) {
-      return new ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder();
+      return new ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder();
     } else {
-      return new ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder(other);
+      return new ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder(other);
     }
   }
 
@@ -282,11 +282,11 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing instance to copy.
    * @return A new VesselCourseEvent RecordBuilder
    */
-  public static ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder newBuilder(ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent other) {
+  public static ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder newBuilder(ibm.gse.eda.kc.vessel.domain.VesselCourseEvent other) {
     if (other == null) {
-      return new ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder();
+      return new ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder();
     } else {
-      return new ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder(other);
+      return new ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder(other);
     }
   }
 
@@ -314,7 +314,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder other) {
+    private Builder(ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.vessel_id)) {
         this.vessel_id = data().deepCopy(fields()[0].schema(), other.vessel_id);
@@ -350,7 +350,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing VesselCourseEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent other) {
+    private Builder(ibm.gse.eda.kc.vessel.domain.VesselCourseEvent other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.vessel_id)) {
         this.vessel_id = data().deepCopy(fields()[0].schema(), other.vessel_id);
@@ -396,7 +396,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'vessel_id'.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder setVesselId(java.lang.CharSequence value) {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder setVesselId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.vessel_id = value;
       fieldSetFlags()[0] = true;
@@ -416,7 +416,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'vessel_id' field.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder clearVesselId() {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder clearVesselId() {
       vessel_id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -436,7 +436,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder setStatus(java.lang.CharSequence value) {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder setStatus(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.status = value;
       fieldSetFlags()[1] = true;
@@ -456,7 +456,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'status' field.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder clearStatus() {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder clearStatus() {
       status = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -476,7 +476,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'speed'.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder setSpeed(int value) {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder setSpeed(int value) {
       validate(fields()[2], value);
       this.speed = value;
       fieldSetFlags()[2] = true;
@@ -496,7 +496,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'speed' field.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder clearSpeed() {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder clearSpeed() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -515,7 +515,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'bearing'.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder setBearing(int value) {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder setBearing(int value) {
       validate(fields()[3], value);
       this.bearing = value;
       fieldSetFlags()[3] = true;
@@ -535,7 +535,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'bearing' field.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder clearBearing() {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder clearBearing() {
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -554,7 +554,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'longitude'.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder setLongitude(java.lang.CharSequence value) {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder setLongitude(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.longitude = value;
       fieldSetFlags()[4] = true;
@@ -574,7 +574,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'longitude' field.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder clearLongitude() {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder clearLongitude() {
       longitude = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -594,7 +594,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'lattitude'.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder setLattitude(java.lang.CharSequence value) {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder setLattitude(java.lang.CharSequence value) {
       validate(fields()[5], value);
       this.lattitude = value;
       fieldSetFlags()[5] = true;
@@ -614,7 +614,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'lattitude' field.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder clearLattitude() {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder clearLattitude() {
       lattitude = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -634,7 +634,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'timestamp'.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder setTimestamp(int value) {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder setTimestamp(int value) {
       validate(fields()[6], value);
       this.timestamp = value;
       fieldSetFlags()[6] = true;
@@ -654,7 +654,7 @@ public class VesselCourseEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'timestamp' field.
       * @return This builder.
       */
-    public ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent.Builder clearTimestamp() {
+    public ibm.gse.eda.kc.vessel.domain.VesselCourseEvent.Builder clearTimestamp() {
       fieldSetFlags()[6] = false;
       return this;
     }
