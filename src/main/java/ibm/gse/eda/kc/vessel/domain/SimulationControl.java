@@ -1,10 +1,19 @@
 package ibm.gse.eda.kc.vessel.domain;
 
+/**
+ * Control the simulation work.
+ * A simulation runs for simulDuration in seconds, during this time the boat
+ * has to move all the route as defined by the given route
+ */
 public class SimulationControl {
 
-    protected String vesselIdentifier;
-    protected Voyage voyage;
-    protected int simulDuration;
+    protected String vesselID;
+    protected int routeID;
+    protected int simulDuration; // in seconds
+    protected String type;
+    protected int hourStep  = 4;
+
+
 
     public SimulationControl(){}
     
@@ -13,15 +22,37 @@ public class SimulationControl {
     }
 
 	public void setVesselID(final String vesselID) {
-        this.vesselIdentifier = vesselID;
+        this.vesselID = vesselID;
+    }
+
+    /**
+     * @return the vesselID
+     */
+    public String getVesselID() {
+        return vesselID;
     }
 
     public void setSimulDuration(final int simulDuration) {
         this.simulDuration = simulDuration;
     }
 
-    public void setVoyage(final Voyage voyage) {
-        this.voyage = voyage;
-	}
+    public void setRouteID(final int route) {
+        this.routeID = route;
+    }
+    
+    /**
+     * @return the route
+     */
+    public int getRouteID() {
+        return routeID;
+    }
+
+    public int getHourStep() {
+        return this.hourStep;
+    }
+
+    public void setHourStep(int hourStep) {
+		this.hourStep = hourStep;
+	};
 
 }

@@ -21,13 +21,14 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <avro.version>1.9.2</avro.version>
+        <kafka.version>2.4.0</kafka.version>
     </properties>
 
     <dependencies>
         <!-- Open Liberty Features -->
         <dependency>
             <groupId>io.openliberty.features</groupId>
-            <artifactId>microProfile-3.0</artifactId>
+            <artifactId>microProfile-3.2</artifactId>
             <type>esa</type>
         </dependency>
         <dependency>
@@ -95,6 +96,11 @@
             <artifactId>avro</artifactId>
             <version>${avro.version}</version>
         </dependency>
+         <dependency>
+    		<groupId>org.apache.kafka</groupId>
+    		<artifactId>kafka-clients</artifactId>
+    		<version>${kafka.version}</version>
+		</dependency>
     </dependencies>
 
     <build>
@@ -173,6 +179,7 @@
                                 <include>**/it/**</include>
                             </includes>
                             <systemPropertyVariables>
+                                <javax.net.ssl.trustStore>${project.build.directory}/liberty/wlp/usr/servers/defaultServer/resources/security/key.jks</javax.net.ssl.trustStore>
                                 <liberty.test.port>${http.port}</liberty.test.port>
                                 <war.name>${app.name}</war.name>
                             </systemPropertyVariables>

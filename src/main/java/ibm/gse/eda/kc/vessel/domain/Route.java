@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.gavaghan.geodesy.GlobalCoordinates;
 
-public class Voyage {
+public class Route {
 
 	protected int id;
 	protected String originPort;
@@ -13,14 +13,14 @@ public class Voyage {
 	protected double distance;
 	protected List<GlobalCoordinates> legs;
 
-	public Voyage(int id,String originPort, String destPort) {
+	public Route(int id,String originPort, String destPort) {
 		this.id = id;
 		this.originPort = originPort;
 		this.destPort = destPort;
 		legs = new ArrayList<GlobalCoordinates>(2);
 	}
 
-	public Voyage(int id,String originPort, String destPort, List<GlobalCoordinates> legs) {
+	public Route(int id,String originPort, String destPort, List<GlobalCoordinates> legs) {
 		this.id = id;
 		this.originPort = originPort;
 		this.destPort = destPort;
@@ -29,8 +29,8 @@ public class Voyage {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof Voyage ) {
-			Voyage that = (Voyage)obj;
+		if (obj instanceof Route ) {
+			Route that = (Route)obj;
 			if (that.id == this.id) return true;
 			if ((that.originPort.equals(this.originPort)
 			 	 && this.destPort.equals(that.destPort)) 
@@ -41,6 +41,21 @@ public class Voyage {
 			} 
 		} return super.equals(obj);
 	}
+
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer("id: ");
+		sb.append(getId())
+		.append(" from ")
+		.append(getOriginPort())
+		.append(" to ")
+		.append(getDestPort())
+		.append(" for ")
+		.append(getDistance())
+		.append(" miles");
+		return sb.toString();
+	}
+
 	public int getId() {
 		return this.id;
 	}
