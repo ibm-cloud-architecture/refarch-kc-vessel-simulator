@@ -1,40 +1,5 @@
 # Microprofile 3.2 openliberty vessel simulator
 
-This microservice is responsible to simulate the vessel course events for a given voyage. It supports the event, actors, and commands discovered during the event storming workshop and illustrated by the following figure for the "vessel actor":
-
-![](https://github.com/ibm-cloud-architecture/refarch-kc/blob/master/analysis/vessel-dom-cmd3.png)
-
-The service exposes simple REST API to support getting vessels and fleets, and start and stop simulator to emulate vessel movements and container metrics events generation. When a vessel leaves or enters it will also generates the events as listed in the analysis.
-
-## What you will learn
-
-* Using JAXRS API to define REST resources
-* Using microprofile 3.2 for API documentation, metrics, heath and readiness
-* How to leverage OpenLiberty in container to support simple JEE and microprofile services
-* Kafka producer code example
-* Test Driven Development with JAXRS and Integration test with Kafka
-
-We recommend also reading the [producer design and coding considerations article](https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/kafka/producers.md)
-
-## Pre-Requisites
-
-* [Maven](https://maven.apache.org/install.html) used to compile and package the application.
-* Java 8: Any compliant JVM should work.
-  * [Java 8 JDK from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-  * [Java 8 JDK from IBM (AIX, Linux, z/OS, IBM i)](http://www.ibm.com/developerworks/java/jdk/),
-    or [Download a Liberty server package](https://developer.ibm.com/assets/wasdev/#filter/assetTypeFilters=PRODUCT)
-    that contains the IBM JDK (Windows, Linux)
-* Have docker engine installed on your computer.
-
-## User stories
-
-This service keeps track of each of the vesselts available for transporting containers. Each vessel has a unique vesselID. We limit the implementation scope to a minimum viable product to demonstrate the vessel mouvement and generate events to kafka so we can apply stateful operator to compute average speed, ETA, and max speed metrics. The following user stories are implemented:
-
-* [ ] The information about each vessel is kept in a json file so we an modify those data if necessary. Vessels are uniquely identified by their name (as vesselID).
-* [ ] The capacity of a vessel is represented by a matrix, number of rows x number of columns to make it simpler. Therefore the total number of container is rows*columns.
-* [ ] Support GPS lat/log position reports, as vessel position event, of the position of the vessel a different point in time. This is modeled as csv file with one row of (lat,log) pair, a row representing a time stamp. ()
-* [ ] Generate vessel event when leaving source port and when entering destination port, and when docked.
-* [ ] Define query of what happen to a vessel from a given time to retrace its past voyages.
 
 
 For more in depth analysis and concepts explained [see this note](https://github.com/ibm-cloud-architecture/refarch-kc#fleetsvessels-microservice---concept)
