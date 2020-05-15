@@ -1,35 +1,53 @@
 # Microprofile 3.2 openliberty vessel simulator
 
-This a simple vessel source events generatator taking into account the route from two harbor. It tries to take into account the vessel characteristic and the geodetic curve shortest path.
+This a simple vessel source events generatator taking into account the route from two harbors, the vessel characteristic and the geodetic curve shortest path.
 
-Read the documentation in [BOOK format](https://ibm-cloud-architecture.github.io/refarch-kc-vessel-simulator).
+This project is part of the Container shipment reference implementation as presented in this [project](https://ibm-cloud-architecture.github.io/refarch-kc)
+
+![](https://github.com/ibm-cloud-architecture/refarch-kc/blob/master/analysis/vessel-dom-cmd3.png)
 
 
-### Building this booklet locally
 
-The content of this repository is written with markdown files, packaged with [MkDocs](https://www.mkdocs.org/) and can be built into a book-readable format by MkDocs build processes.
+The service exposes simple REST API to support getting vessels and fleets, and start and stop simulator to emulate vessel movements and container metrics events generation. When a vessel leaves or enters it will also generates the events as listed in the analysis.
 
-1. Install MkDocs locally following the [official documentation instructions](https://www.mkdocs.org/#installation).
-1. Install Material plugin for mkdocs:  `pip install mkdocs-material` 
-2. `git clone https://github.com/ibm-cloud-architecture/refarch-kc-vessel-simulator.git` _(or your forked repository if you plan to edit)_
-3. `cd refarch-kc-refarch-kc-vessel-simulator`
-4. `mkdocs serve`
-5. Go to `http://127.0.0.1:8000/` in your browser.
+## What you will learn
 
-### Pushing the book to GitHub Pages
+* Using JAXRS API to define REST resources
+* Using microprofile 3.2 for API documentation, metrics, heath and readiness
+* Using [Reactive messaging in microservice](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html#mpreactive) as part of microprofile 3.2
+* How to leverage OpenLiberty in container to support simple JEE and microprofile services
+* Kafka producer code example
+* Test Driven Development with JAXRS and Integration test with Kafka
 
-1. Ensure that all your local changes to the `master` branch have been committed and pushed to the remote repository.
-   1. `git push origin master`
-2. Ensure that you have the latest commits to the `gh-pages` branch, so you can get others' updates.
-	```bash
-	git checkout gh-pages
-	git pull origin gh-pages
-	
-	git checkout master
-	```
-3. Run `mkdocs gh-deploy` from the root refarch-eda directory.
+We recommend also reading the [producer design and coding considerations article](https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/kafka/producers.md)
 
---- 
+## User stories
+
+This service keeps track of each of the vesselts available for transporting containers. Each vessel has a unique vesselID. We limit the implementation scope to a minimum viable product to demonstrate the vessel mouvement and generate events to kafka so we can apply stateful operator to compute average speed, ETA, and max speed metrics. The following user stories are implemented:
+
+* [ ] The information about each vessel is kept in a json file so we an modify those data if necessary. Vessels are uniquely identified by their name (as vesselID).
+* [ ] The capacity of a vessel is represented by a matrix, number of rows x number of columns to make it simpler. Therefore the total number of container is rows*columns.
+* [ ] Support GPS lat/log position reports, as vessel position event, of the position of the vessel a different point in time. This is modeled as csv file with one row of (lat,log) pair, a row representing a time stamp. ()
+* [ ] Generate vessel event when leaving source port and when entering destination port, and when docked.
+* [ ] Define query of what happen to a vessel from a given time to retrace its past voyages.
+
+## Build and run
+
+## Deploy to openshift
+
+
+## Additional reading
+
+
+* [Getting Started with openshift on learn.openshift.com](https://learn.openshift.com/introduction/getting-started/)
+* [IBM Event Driven Reference architecture](https://ibm-cloud-architecture.github.io/refarch-eda/)
+* [Event driven design patterns](https://ibm-cloud-architecture.github.io/refarch-eda/design-patterns/ED-patterns/)
+* [Open Liberty](https://openliberty.io/)
+* [Java microprofile](https://openliberty.io/docs/ref/general/#microprofile.html)
+* [Kafka producer implementation considerations](https://ibm-cloud-architecture.github.io/refarch-eda/kafka/producers/)
+* [Kafka consumer implementation considerations](https://ibm-cloud-architecture.github.io/refarch-eda/kafka/consumers/)
+* [Kafka Streams introduction](https://ibm-cloud-architecture.github.io/refarch-eda/kafka/kafka-stream/)
+
 
 ## Contribute
 

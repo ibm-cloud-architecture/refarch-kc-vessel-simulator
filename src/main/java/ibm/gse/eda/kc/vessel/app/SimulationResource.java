@@ -62,7 +62,7 @@ public class SimulationResource {
      @Timed(name = "vesselsProcessingTime",
      tags = {"method=getVessels"},
      absolute = true,
-     description = "Time needed to get vessels")
+     description = "Time needed to get the list of vessels")
      @Counted(name = "vesselAccessCount",
        absolute = true,
        description = "Number of times the list of vessel method is requested")

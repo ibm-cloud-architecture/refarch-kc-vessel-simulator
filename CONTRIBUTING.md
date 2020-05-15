@@ -1,4 +1,5 @@
-## Contributing to IBM Cloud Architecture reference applications
+# Contributing to IBM Cloud Architecture reference applications
+
 Anyone can contribute to IBM Cloud Architecture reference applications and their associated projects, whether you are an IBMer or not.
 We welcome your collaboration & contributions happily, as our reference applications are meant to reflect your real world scenarios.
 There are multiple ways to contribute: report bugs and improvement suggestions, improve documentation, and contribute code.
@@ -29,6 +30,7 @@ The more explicit and thorough you are in opening GitHub Issues, the more effici
 We really value contributions, and to maximize the impact of code contributions, we request that any contributions follow the guidelines below.  If you are new to open source contribution and would like some more pointers or guidance, you may want to check out [**Your First PR**](http://yourfirstpr.github.io/) and [**First Timers Only**](https://www.firsttimersonly.com/).  These are a few projects that help on-board new contributors to the overall process.
 
 ### Coding and Pull Requests best practices
+
 - Please ensure you follow the coding standard and code formatting used throughout the existing code base.
   - This may vary project by project, but any specific diversion from normal language standards will be explicitly noted.
 - One feature / bug fix / documentation update per pull request
@@ -105,6 +107,7 @@ Once the pull request has been reviewed, accepted and merged into the main githu
     ```
 
 ### What happens next?
+
 - All pull requests will be automatically built and unit tested by travis-ci, when implemented by that specific project.
   - You can determine if a given project is enabled for travis-ci unit tests by the existence of a `.travis.yml` file in the root of the repository or branch.
   - When in use, all travis-ci unit tests must pass completely before any further review or discussion takes place.
