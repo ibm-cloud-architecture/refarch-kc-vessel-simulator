@@ -7,6 +7,9 @@ import javax.enterprise.context.ApplicationScoped;
 
 import ibm.gse.eda.kc.vessel.domain.Vessel;
 
+/**
+ * This could be an external data source, but as a demo it is fine to have a map.
+ */
 @ApplicationScoped
 public class VesselRepository {
     protected HashMap<String,Vessel> vessels = new HashMap<String,Vessel>();

@@ -1,7 +1,7 @@
 FROM maven:3.6-jdk-11-slim AS build
-LABEL maintainer="IBM Garage Solution Engineering"
+LABEL maintainer="IBM Garage Solution Engineering - Jerome Boyer"
 COPY . /usr/
-RUN mvn -f /usr/pom.xml clean package
+RUN cd /usr && mvn clean package
 
 FROM openliberty/open-liberty:microProfile3-ubi-min
 COPY src/main/liberty/config /opt/ol/wlp/usr/servers/defaultServer/

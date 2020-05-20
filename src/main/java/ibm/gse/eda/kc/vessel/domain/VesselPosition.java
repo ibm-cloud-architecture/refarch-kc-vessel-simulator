@@ -5,7 +5,7 @@ import java.util.Date;
 import org.gavaghan.geodesy.GlobalCoordinates;
 
 /**
- * VesselPosition
+ * VesselPosition makrs the longitude, lattitude, but instant speed and bearing
  */
 public class VesselPosition {
 

@@ -1,6 +1,6 @@
 package it.dev.appsody.starter;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.json.JsonObject;
 import javax.ws.rs.client.Client;
@@ -8,34 +8,34 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 
 import org.apache.cxf.jaxrs.provider.jsrjsonp.JsrJsonpProvider;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class HealthEndpointTest {
     
     private static String baseUrl;
     private static final String LIVENESS_ENDPOINT = "/health/live";
     private static final String READINESS_ENDPOINT = "/health/ready";
-    private Client client;
-    private Response response;
+    private static Client client;
+    private static Response response;
     
-    @BeforeClass
+    @BeforeAll
     public static void oneTimeSetup() {
         String port = System.getProperty("liberty.test.port");
         baseUrl = "http://localhost:" + port;
     }
     
-    @Before
+    @BeforeEach
     public void setup() {
         response = null;
         client = ClientBuilder.newClient();
         client.register(JsrJsonpProvider.class);
     }
     
-    @After
-    public void teardown() {
+    @AfterAll
+    public static void teardown() {
         response.close();
         client.close();
     }
@@ -92,7 +92,7 @@ public class HealthEndpointTest {
      *          - response received from the target URL.
      */
     private void assertResponse(String url, Response response) {
-        assertEquals("Incorrect response code from " + url, 200, response.getStatus());
+        assertEquals(200, response.getStatus(), "Incorrect response code from " + url);
     }
 
 }

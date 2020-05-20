@@ -4,22 +4,17 @@ This a simple vessel source events generatator taking into account the route fro
 
 This project is part of the Container shipment reference implementation as presented in this [project](https://ibm-cloud-architecture.github.io/refarch-kc)
 
-![](https://github.com/ibm-cloud-architecture/refarch-kc/blob/master/analysis/vessel-dom-cmd3.png)
-
+![1](https://github.com/ibm-cloud-architecture/refarch-kc/blob/master/analysis/vessel-dom-cmd3.png)
 
 
 The service exposes simple REST API to support getting vessels and fleets, and start and stop simulator to emulate vessel movements and container metrics events generation. When a vessel leaves or enters it will also generates the events as listed in the analysis.
 
-## What you will learn
+## Technology used
 
 * Using JAXRS API to define REST resources
 * Using microprofile 3.2 for API documentation, metrics, heath and readiness
 * Using [Reactive messaging in microservice](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html#mpreactive) as part of microprofile 3.2
-* How to leverage OpenLiberty in container to support simple JEE and microprofile services
-* Kafka producer code example
-* Test Driven Development with JAXRS and Integration test with Kafka
-
-We recommend also reading the [producer design and coding considerations article](https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/kafka/producers.md)
+* How to leverage OpenLiberty in container to support microprofile services
 
 ## User stories
 
@@ -33,11 +28,22 @@ This service keeps track of each of the vesselts available for transporting cont
 
 ## Build and run
 
+* Keep up to date on appsody version: `brew upgrade appsody`
+* The code template was create with the command: `appsody init java-openliberty kafka`
+* Start a local Kafka broker and Zookeeper server from the `local-kafka` folder using `docker-compose up`. The network is `local-kafka_default`
+* Build with `appsody build`
+* Build docker image: `docker build -t ibmcase/kc-vessel-simulator .`
+
+Get Keystore password: 
+```
+ docker exec -ti aecc3c3a4f25 bash -c "grep keystore /opt/ol/wlp/usr/servers/defaultServer/server.env"
+```
+
 ## Deploy to openshift
 
+* login to image registry: `oc registry login`
 
 ## Additional reading
-
 
 * [Getting Started with openshift on learn.openshift.com](https://learn.openshift.com/introduction/getting-started/)
 * [IBM Event Driven Reference architecture](https://ibm-cloud-architecture.github.io/refarch-eda/)

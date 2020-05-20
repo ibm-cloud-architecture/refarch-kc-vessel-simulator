@@ -3,9 +3,9 @@ package ut;
 import java.util.List;
 
 import org.gavaghan.geodesy.GlobalCoordinates;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import ibm.gse.eda.kc.vessel.domain.PositionCalculator;
 import ibm.gse.eda.kc.vessel.domain.SimulationControl;
@@ -19,7 +19,7 @@ public class VesselSimulatorServiceTest {
     private static VesselSimulatorService service;
     private static 	VesselRepository vesselRepository = new VesselRepository();
     private static 	 RouteRepository routeRepository = new RouteRepository();
-    @BeforeClass
+    @BeforeAll
     public static void setup() {
         service = new VesselSimulatorService(vesselRepository,routeRepository);
     }
@@ -27,9 +27,9 @@ public class VesselSimulatorServiceTest {
     @Test
     public void testOneStepSimulation(){
         VesselPosition position = service.getStartingPosition("Jiminy Cricket",1);
-        Assert.assertNotNull(position);
-        Assert.assertNotNull(position.getTimestamp());
-        Assert.assertTrue("Jiminy Cricket".equals(position.getVesselID()));
+        Assertions.assertNotNull(position);
+        Assertions.assertNotNull(position.getTimestamp());
+        Assertions.assertTrue("Jiminy Cricket".equals(position.getVesselID()));
     }
 
     @Test
@@ -39,10 +39,10 @@ public class VesselSimulatorServiceTest {
         double d = PositionCalculator.getDistance(p1, p2);
         double b = PositionCalculator.getBearing(p1, p2);
         System.out.println(b);
-        Assert.assertTrue( b >= 270 && b <=280);
-        Assert.assertFalse(service.assessIfArrived(p1,p2));
+        Assertions.assertTrue( b >= 270 && b <=280);
+        Assertions.assertFalse(service.assessIfArrived(p1,p2));
         p1 = new GlobalCoordinates(37.697624, -123.005941);
-        Assert.assertTrue(service.assessIfArrived(p1,p2));
+        Assertions.assertTrue(service.assessIfArrived(p1,p2));
     }
 
     @Test
@@ -53,8 +53,8 @@ public class VesselSimulatorServiceTest {
         simulationControl.setRouteID(1);
         simulationControl.setHourStep(1);
         List<VesselPosition> positions = service.startSimulation(simulationControl);
-        Assert.assertNotNull(positions);
-        Assert.assertTrue(positions.size() > 1);
+        Assertions.assertNotNull(positions);
+        Assertions.assertTrue(positions.size() > 1);
         for (VesselPosition v : positions) {
             System.out.println(v.toString());
         }

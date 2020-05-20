@@ -7,8 +7,8 @@
 
     <parent><!--required parent POM-->
         <groupId>dev.appsody</groupId>
-        <artifactId>java-microprofile</artifactId>
-        <version>[0.2, 0.3)</version>
+        <artifactId>java-openliberty</artifactId>
+        <version>[0.2,0.3)</version>
         <relativePath/>
     </parent>
 
@@ -16,20 +16,31 @@
     <artifactId>kc-vessel-simulator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+
     <properties>
         <compiler-plugin.version>3.8.0</compiler-plugin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <avro.version>1.9.2</avro.version>
         <kafka.version>2.4.0</kafka.version>
+        <!-- Plugin versions -->
+        <version.liberty-maven-plugin>3.2</version.liberty-maven-plugin>
+        <version.maven-failsafe-plugin>2.22.2</version.maven-failsafe-plugin>
+        <version.maven-war-plugin>3.2.3</version.maven-war-plugin>
+        <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
+        <!-- Liberty configuration -->
+        <liberty.var.default.http.port>9080</liberty.var.default.http.port>
+        <liberty.var.default.https.port>9443</liberty.var.default.https.port>
     </properties>
 
     <dependencies>
-        <!-- Open Liberty Features -->
+        <!-- Aggregate of MicroProfile APIs -->
         <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>microProfile-3.2</artifactId>
-            <type>esa</type>
+            <groupId>org.eclipse.microprofile</groupId>
+            <artifactId>microprofile</artifactId>
+            <version>3.2</version>
+            <type>pom</type>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -41,6 +52,40 @@
             <artifactId>geodesy</artifactId>
             <version>1.1.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile.reactive.messaging</groupId>
+            <artifactId>microprofile-reactive-messaging-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile.reactive-streams-operators</groupId>
+            <artifactId>microprofile-reactive-streams-operators-api</artifactId>
+            <version>1.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.smallrye.reactive/smallrye-reactive-messaging-kafka -->
+        <dependency>
+            <groupId>io.smallrye.reactive</groupId>
+            <artifactId>smallrye-reactive-messaging-kafka</artifactId>
+            <version>2.0.3</version>
+          </dependency>
+        <!-- Java utility classes -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
          <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14 -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -49,27 +94,27 @@
         </dependency>
         <!-- For tests -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.6.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-client</artifactId>
-            <version>3.2.6</version>
+            <version>3.3.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-extension-providers</artifactId>
-            <version>3.2.6</version>
+            <version>3.3.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
-            <version>1.0.4</version>
+            <version>1.1.4</version>
             <scope>test</scope>
         </dependency>
         <!-- Support for JDK 9 and above -->
@@ -79,34 +124,6 @@
             <version>2.3.1</version>
 	    <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
-            <version>2.3.0.1</version>
-	    <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>2.3.2</version>
-	    <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1.1</version>
-	    <scope>test</scope>
-        </dependency>
-         <dependency>
-            <groupId>org.apache.avro</groupId>
-            <artifactId>avro</artifactId>
-            <version>${avro.version}</version>
-        </dependency>
-         <dependency>
-    		<groupId>org.apache.kafka</groupId>
-    		<artifactId>kafka-clients</artifactId>
-    		<version>${kafka.version}</version>
-		</dependency>
     </dependencies>
 
     <build>
@@ -125,25 +142,7 @@
             <plugin>
                 <groupId>io.openliberty.tools</groupId>
                 <artifactId>liberty-maven-plugin</artifactId>
-                <configuration>
-                    <assemblyArtifact>
-                        <groupId>${liberty.groupId}</groupId>
-                        <artifactId>${liberty.artifactId}</artifactId>
-                        <version>${version.openliberty-runtime}</version>
-                        <type>zip</type>
-                    </assemblyArtifact>
-                    <serverName>defaultServer</serverName>
-                    <stripVersion>true</stripVersion>
-                    <configFile>src/main/liberty/config/server.xml</configFile>
-                    <looseApplication>true</looseApplication>
-                    <packageFile>${package.file}</packageFile>
-                    <include>${packaging.type}</include>
-                    <bootstrapProperties>
-                        <default.http.port>${http.port}</default.http.port>
-                        <default.https.port>${https.port}</default.https.port>
-                        <app.context.root>${app.name}</app.context.root>
-                    </bootstrapProperties>
-                </configuration>
+                <version>${version.liberty-maven-plugin}</version>
             </plugin>
             <!-- Plugin to run unit tests -->
             <plugin>
@@ -186,7 +185,6 @@
                             </includes>
                             <systemPropertyVariables>
                                 <javax.net.ssl.trustStore>${project.build.directory}/liberty/wlp/usr/servers/defaultServer/resources/security/key.jks</javax.net.ssl.trustStore>
-                                <liberty.test.port>${http.port}</liberty.test.port>
                                 <war.name>${app.name}</war.name>
                             </systemPropertyVariables>
                         </configuration>

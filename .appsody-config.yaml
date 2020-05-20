@@ -1,2 +1,3 @@
+id: "20200519192338.11867600"
 project-name: refarch-kc-vessel-simulator
-stack: docker.io/appsody/java-microprofile:0.2
+stack: docker.io/appsody/java-openliberty:0.2

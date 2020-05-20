@@ -1,8 +1,8 @@
 package ut;
 
 import org.gavaghan.geodesy.GlobalCoordinates;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import ibm.gse.eda.kc.vessel.domain.PositionCalculator;
 
@@ -21,7 +21,7 @@ public class GeodesicLineTest {
      double duration = 4;  // in hours
      
      GlobalCoordinates dest = PositionCalculator.getNewPosition(currentPosition, startBearing, speed, duration);
-     Assert.assertTrue(dest.getLatitude() > currentPosition.getLatitude() );
-     Assert.assertTrue(dest.getLongitude() < currentPosition.getLongitude() );
+     Assertions.assertTrue(dest.getLatitude() > currentPosition.getLatitude() );
+     Assertions.assertTrue(dest.getLongitude() < currentPosition.getLongitude());
     }
 }

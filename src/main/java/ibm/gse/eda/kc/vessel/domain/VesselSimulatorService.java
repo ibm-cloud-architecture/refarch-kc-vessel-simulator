@@ -6,28 +6,37 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+import com.google.gson.Gson;
+
+import org.eclipse.microprofile.reactive.messaging.Outgoing;
 import org.gavaghan.geodesy.GlobalCoordinates;
 
 import ibm.gse.eda.kc.vessel.infra.RouteRepository;
 import ibm.gse.eda.kc.vessel.infra.VesselRepository;
+import io.reactivex.Flowable;
+import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 
 /**
- * Simulate the course of a vessel
+ * Simulate the course of a vessel between harbors over a route
  */
 @ApplicationScoped
 public class VesselSimulatorService {
-
+	private static Logger logger = Logger.getLogger(VesselSimulatorService.class.getName());
 	private Random rand = new Random(); 
-
+	private Gson gsonParser = new Gson();
 	@Inject
 	VesselRepository vesselRepository;
 
 	@Inject
 	RouteRepository routeRepository;
+
+	ArrayList<VesselPosition> positions;
 
 	public VesselSimulatorService() {
 		// needed for bean injection !
@@ -38,13 +47,17 @@ public class VesselSimulatorService {
 		this.vesselRepository = vesselRepository;
 	}
 
+
 	public List<VesselPosition> startSimulation(SimulationControl simulationControl) {
 		boolean valid = validateControlParameters(simulationControl);
-		ArrayList<VesselPosition> positions = new ArrayList<VesselPosition>();
+		positions = new ArrayList<VesselPosition>();
 		if (valid) {
 			Vessel vessel = vesselRepository.getVessel(simulationControl.getVesselID());
 			Route route = routeRepository.getRouteById(simulationControl.getRouteID());
-			positions.addAll(generateAllPositions(vessel,route,simulationControl.getHourStep()));
+			positions.addAll(generateAllPositions(vessel,
+						route,
+						simulationControl.getHourStep()));
+			publishVesselPositions();
 		}
 		return positions;
 	}
@@ -75,10 +88,8 @@ public class VesselSimulatorService {
 			newPosition = new VesselPosition(vessel,newTime,currentCoordinates);
 			newPosition.setSpeed(speed);
 			newPosition.setBearing(bearing);
-			System.out.println(newPosition.toString());
 			positions.add(newPosition);
 		}
-
 		return positions;
 	}
 
@@ -112,6 +123,19 @@ public class VesselSimulatorService {
 		return true;
 	}
 
+	
 
-    
+	@Outgoing("vessel-positions")
+    public Flowable<KafkaRecord<String, String>> publishVesselPositions() {
+		if (positions != null) {
+			List<KafkaRecord<String, String>> vesselPositionAsJson = positions.stream()
+			.map( vp -> KafkaRecord.of(vp.vesselID,
+					gsonParser.toJson(vp))
+				)
+			.collect(Collectors.toList());
+			logger.warning("Send vessel positions to Event Streams");
+			return Flowable.fromIterable(vesselPositionAsJson);
+		}
+		return Flowable.empty();
+	}
 }

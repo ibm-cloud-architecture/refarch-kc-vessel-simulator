@@ -11,8 +11,8 @@ import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.io.JsonEncoder;
 import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.avro.specific.SpecificDatumWriter;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import ibm.gse.eda.kc.vessel.domain.events.VesselCourseEvent;
 
@@ -36,7 +36,7 @@ public class VesselCourseEventTest {
         }
         String outString = new String(data);
         System.out.println(outString);
-        Assert.assertTrue(outString.contains("AtSea"));
+        Assertions.assertTrue(outString.contains("AtSea"));
     }
 
     @Test
@@ -49,8 +49,8 @@ public class VesselCourseEventTest {
            decoder = DecoderFactory.get().jsonDecoder(
            VesselCourseEvent.getClassSchema(), inBean);
            VesselCourseEvent vce = reader.read(null, decoder);
-           Assert.assertNotNull(vce);
-           Assert.assertTrue(vce.getStatus().toString().equals("AtSea"));
+           Assertions.assertNotNull(vce);
+           Assertions.assertTrue(vce.getStatus().toString().equals("AtSea"));
        } catch (IOException e) {
            System.err.println("Deserialization error:" + e.getMessage());
        }

@@ -10,7 +10,7 @@ public class SimulationControl {
     protected String vesselID;
     protected int routeID;
     protected int simulDuration; // in seconds
-    protected String type;
+    protected String type;  // not yet
     protected int hourStep  = 4;
 
 

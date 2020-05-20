@@ -39,7 +39,7 @@ import ibm.gse.eda.kc.vessel.infra.VesselRepository;
 @Produces(MediaType.APPLICATION_JSON)
 @Tags(value = @Tag(name = "vessel", description = "All the vessel methods"))
 public class SimulationResource {
-
+   
     @Inject
     private RouteRepository routeRepository;
     @Inject

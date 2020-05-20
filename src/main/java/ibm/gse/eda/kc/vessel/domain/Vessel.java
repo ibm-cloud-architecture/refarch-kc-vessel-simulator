@@ -1,7 +1,7 @@
 package ibm.gse.eda.kc.vessel.domain;
 
 /**
- * Vessel
+ * Vessel has a max speed
  */
 public class Vessel {
 
