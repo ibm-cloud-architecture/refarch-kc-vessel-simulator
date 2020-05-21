@@ -53,6 +53,18 @@ public class SimulationControl {
 
     public void setHourStep(int hourStep) {
 		this.hourStep = hourStep;
-	};
+	}
+
+    public int getSimulDuration() {
+        return simulDuration;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    };
 
 }

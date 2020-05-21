@@ -1,4 +1,4 @@
-package it.dev.appsody.starter;
+package it;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,7 +8,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 
 import org.apache.cxf.jaxrs.provider.jsrjsonp.JsrJsonpProvider;
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,13 +18,15 @@ public class HealthEndpointTest {
     private static String baseUrl;
     private static final String LIVENESS_ENDPOINT = "/health/live";
     private static final String READINESS_ENDPOINT = "/health/ready";
-    private static Client client;
-    private static Response response;
+    private Client client;
+    private Response response;
     
     @BeforeAll
     public static void oneTimeSetup() {
         String port = System.getProperty("liberty.test.port");
+        if (port == null) port = "9080";
         baseUrl = "http://localhost:" + port;
+        System.out.println(baseUrl);
     }
     
     @BeforeEach
@@ -34,8 +36,8 @@ public class HealthEndpointTest {
         client.register(JsrJsonpProvider.class);
     }
     
-    @AfterAll
-    public static void teardown() {
+    @AfterEach
+    public  void teardown() {
         response.close();
         client.close();
     }
@@ -61,10 +63,11 @@ public class HealthEndpointTest {
         
         String expectedOutcome = "UP";
         String actualOutcome = healthJson.getString("status");
-        assertEquals("Application should be " + state, expectedOutcome, actualOutcome);
+        assertEquals(expectedOutcome, actualOutcome, "Application should be " + state);
         
         actualOutcome = healthJson.getJsonArray("checks").getJsonObject(0).getString("status");
-        assertEquals("First array element was expected to be SystemResource and it wasn't healthy", expectedOutcome, actualOutcome);
+        assertEquals(expectedOutcome, actualOutcome, "First array element was expected to be SystemResource and it wasn't healthy");
+    
     
     }
     

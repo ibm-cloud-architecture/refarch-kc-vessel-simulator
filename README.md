@@ -32,9 +32,10 @@ This service keeps track of each of the vesselts available for transporting cont
 * The code template was create with the command: `appsody init java-openliberty kafka`
 * Start a local Kafka broker and Zookeeper server from the `local-kafka` folder using `docker-compose up`. The network is `local-kafka_default`
 * Build with `appsody build`
-* Build docker image: `docker build -t ibmcase/kc-vessel-simulator .`
+* Execute with `appsdody run`
 
-Get Keystore password: 
+
+To access the metrics, it is protected by a password for the user admin, so to get the Keystore password do: 
 ```
  docker exec -ti aecc3c3a4f25 bash -c "grep keystore /opt/ol/wlp/usr/servers/defaultServer/server.env"
 ```
@@ -49,9 +50,10 @@ Get Keystore password:
 * [IBM Event Driven Reference architecture](https://ibm-cloud-architecture.github.io/refarch-eda/)
 * [Event driven design patterns](https://ibm-cloud-architecture.github.io/refarch-eda/design-patterns/ED-patterns/)
 * [Open Liberty](https://openliberty.io/)
+* [Appsody OpenLiberty stack](https://appsody.dev/tutorials/open-liberty-stack-tutorial/)
 * [Java microprofile](https://openliberty.io/docs/ref/general/#microprofile.html)
+* [SmallRye reactive messaging with kafka](https://smallrye.io/smallrye-reactive-messaging/smallrye-reactive-messaging/2/kafka/kafka.html)
 * [Kafka producer implementation considerations](https://ibm-cloud-architecture.github.io/refarch-eda/kafka/producers/)
-* [Kafka consumer implementation considerations](https://ibm-cloud-architecture.github.io/refarch-eda/kafka/consumers/)
 * [Kafka Streams introduction](https://ibm-cloud-architecture.github.io/refarch-eda/kafka/kafka-stream/)
 
 

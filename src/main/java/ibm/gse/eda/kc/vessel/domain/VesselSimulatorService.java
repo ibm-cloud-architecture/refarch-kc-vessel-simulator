@@ -132,6 +132,7 @@ public class VesselSimulatorService {
 			.map( vp -> KafkaRecord.of(vp.vesselID,
 					gsonParser.toJson(vp))
 				)
+			.peek( r -> logger.warning(r.getPayload()))
 			.collect(Collectors.toList());
 			logger.warning("Send vessel positions to Event Streams");
 			return Flowable.fromIterable(vesselPositionAsJson);

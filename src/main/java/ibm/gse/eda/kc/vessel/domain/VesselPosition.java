@@ -96,4 +96,7 @@ public class VesselPosition {
         this.lattitude = globalCoordinates.getLatitude();
         this.longitude = globalCoordinates.getLongitude();
 	}
+
+	public VesselPosition() {
+	}
 }
