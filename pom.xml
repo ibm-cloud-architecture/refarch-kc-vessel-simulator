@@ -21,7 +21,7 @@
         <compiler-plugin.version>3.8.0</compiler-plugin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <avro.version>1.9.2</avro.version>
+        <avro.version>1.11.3</avro.version>
         <kafka.version>2.4.0</kafka.version>
         <!-- Plugin versions -->
         <version.liberty-maven-plugin>3.2</version.liberty-maven-plugin>
